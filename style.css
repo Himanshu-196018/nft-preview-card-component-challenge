@@ -24,17 +24,44 @@ body {
   border-radius: 12px;
   display: grid;
   align-content: space-between;
+
   /* centering a div/component with position and transform */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  /* box shadow effects */
+  /* can cast multiple shadow on same element */
+  /* shadow1(right bottom), shadow1(left bottom), shadow2(right bottom), shadow2(left bottom), shadow2(right top), shadow2(left top) */
+  box-shadow: 18px 44px 6px hsl(217, 54%, 11%),
+    -18px 44px 6px hsl(217, 54%, 11%), 43px 118px 10px hsl(217, 51%, 12%),
+    -43px 118px 10px hsl(217, 51%, 12%), 43px -24px 10px hsl(217, 51%, 12%),
+    -43px -24px 10px hsl(217, 51%, 12%);
 }
 
-.nft-image img {
+/* style for nft image */
+.nft-image {
   width: 277px;
   height: 277px;
   border-radius: 12px;
+  background: url("images/image-equilibrium.jpg") no-repeat center;
+  background-size: cover;
+  /* hover effect */
+  &:hover {
+    cursor: pointer;
+  }
+
+  /* hover effect for image using pseudo-element selector */
+  &:hover::before {
+    width: inherit;
+    height: inherit;
+    border-radius: 12px;
+    content: "";
+    background: hsla(178, 100%, 50%, 0.5) url("images/icon-view.svg") no-repeat
+      center;
+    position: absolute;
+  }
 }
 
 /* style for information section  */
@@ -42,6 +69,12 @@ h1 {
   font-size: 20px;
   font-weight: 600;
   color: white;
+
+  /* hover effect */
+  &:hover {
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+  }
 }
 
 .row {
@@ -86,9 +119,16 @@ h1 {
 
 .creator {
   align-self: center;
+  color: hsl(215, 51%, 70%);
 }
 .highlight {
-  color: hsl(215, 51%, 70%);
+  color: white;
+
+  /* hover effect */
+  &:hover {
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+  }
 }
 
 /* style for larger screen windows */
@@ -97,7 +137,7 @@ h1 {
     width: 350px;
     height: 594px;
   }
-  .nft-image img {
+  .nft-image {
     width: 300px;
     height: 300px;
   }
