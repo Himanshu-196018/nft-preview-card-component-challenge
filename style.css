@@ -4,12 +4,110 @@
   padding: 0;
 }
 
+/* body style */
 html,
 body {
   width: 100%;
   min-height: 100vh;
+  font-family: Outfit;
+  background-color: hsl(217, 54%, 11%);
+  color: hsl(215, 51%, 70%);
+  display: grid;
 }
 
+/* style for card component */
 .component {
-  width: 375px;
+  padding: 25px;
+  width: 325px;
+  height: 540px;
+  background-color: hsl(216, 50%, 16%);
+  border-radius: 12px;
+  display: grid;
+  align-content: space-between;
+  /* centering a div/component with position and transform */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nft-image img {
+  width: 277px;
+  height: 277px;
+  border-radius: 12px;
+}
+
+/* style for information section  */
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+}
+
+.value {
+  color: hsl(178, 100%, 50%);
+}
+
+.logo {
+  width: 18px;
+  height: 18px;
+}
+
+/* style for nft creator section */
+.creator-section {
+  width: 100%;
+  height: 50px;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  column-gap: 20px;
+  border-top: 1px solid hsl(215, 32%, 27%);
+}
+
+.creator-section img {
+  width: 33px;
+  height: 33px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.creator {
+  align-self: center;
+}
+.highlight {
+  color: hsl(215, 51%, 70%);
+}
+
+/* style for larger screen windows */
+@media screen and (width > 400px) {
+  .component {
+    width: 350px;
+    height: 594px;
+  }
+  .nft-image img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* style for footer */
+footer {
+  margin: 0 auto;
+  font-size: 14px;
+  position: absolute;
+  bottom: 10px;
+  justify-self: center;
 }
